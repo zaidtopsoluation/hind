@@ -24,6 +24,20 @@ export default function ContactPage() {
       'name': 'Hind Cool Service',
       'telephone': '+917408381814',
       'email': 'service@hindcool.in',
+      'areaServed': [
+        'Mumbai',
+        'Thane',
+        'Navi Mumbai',
+        'Andheri',
+        'Bandra',
+        'Juhu',
+        'Powai',
+        'Borivali',
+        'Chembur',
+        'Worli',
+        'Dadar',
+        'Colaba'
+      ],
       'address': {
         '@type': 'PostalAddress',
         'streetAddress': 'Saki Naka, Andheri East',

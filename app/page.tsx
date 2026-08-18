@@ -10,6 +10,10 @@ export default function Home() {
     '@id': 'https://hindcoolservice.com/#organization',
     'url': 'https://hindcoolservice.com',
     'telephone': '+917408381814',
+    'founder': {
+      '@type': 'Person',
+      'name': 'Mohammad Shameem'
+    },
     'priceRange': '₹₹',
     'address': {
       '@type': 'PostalAddress',
@@ -24,6 +28,19 @@ export default function Home() {
       'latitude': 19.0968,
       'longitude': 72.8882
     },
+    'areaServed': [
+      { '@type': 'AdministrativeArea', 'name': 'Mumbai' },
+      { '@type': 'AdministrativeArea', 'name': 'Thane' },
+      { '@type': 'AdministrativeArea', 'name': 'Navi Mumbai' },
+      { '@type': 'AdministrativeArea', 'name': 'Andheri' },
+      { '@type': 'AdministrativeArea', 'name': 'Bandra' },
+      { '@type': 'AdministrativeArea', 'name': 'Borivali' },
+      { '@type': 'AdministrativeArea', 'name': 'Powai' },
+      { '@type': 'AdministrativeArea', 'name': 'Chembur' },
+      { '@type': 'AdministrativeArea', 'name': 'Worli' },
+      { '@type': 'AdministrativeArea', 'name': 'Dadar' },
+      { '@type': 'AdministrativeArea', 'name': 'Colaba' }
+    ],
     'openingHoursSpecification': [
       {
         '@type': 'OpeningHoursSpecification',
@@ -252,6 +269,50 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Coverage Matrix (Mumbai Regional SEO) */}
+      <section className="bg-white py-20 border-t border-surface-container-highest">
+        <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+          <div className="text-center mb-12 max-w-2xl mx-auto flex flex-col gap-3">
+            <h2 className="font-headline-lg text-headline-lg text-deep-navy font-bold">
+              Air Conditioning Service Coverage in Mumbai
+            </h2>
+            <p className="font-body-md text-body-md text-on-surface-variant">
+              Hind Cool Service provides priority dispatch to residential properties, offices, and commercial establishments in all sectors of Mumbai.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="glass-panel p-6 rounded-xl flex flex-col gap-3 bg-surface">
+              <h3 className="font-bold text-deep-navy text-md border-b border-outline-variant pb-2">Western Suburbs</h3>
+              <p className="text-xs text-on-surface-variant leading-relaxed">
+                Andheri East/West, Bandra, Borivali, Goregaon, Juhu, Kandivali, Malad, Santacruz, Vile Parle, Khar, Dahisar.
+              </p>
+            </div>
+            
+            <div className="glass-panel p-6 rounded-xl flex flex-col gap-3 bg-surface">
+              <h3 className="font-bold text-deep-navy text-md border-b border-outline-variant pb-2">Eastern Suburbs</h3>
+              <p className="text-xs text-on-surface-variant leading-relaxed">
+                Powai, Ghatkopar, Bhandup, Kurla, Mulund, Vikhroli, Chembur, Kanjurmarg.
+              </p>
+            </div>
+
+            <div className="glass-panel p-6 rounded-xl flex flex-col gap-3 bg-surface">
+              <h3 className="font-bold text-deep-navy text-md border-b border-outline-variant pb-2">South Mumbai</h3>
+              <p className="text-xs text-on-surface-variant leading-relaxed">
+                Dadar, Worli, Prabhadevi, Colaba, Nariman Point, Parel, Byculla, Mumbai Central, Mahalaxmi, Churchgate.
+              </p>
+            </div>
+
+            <div className="glass-panel p-6 rounded-xl flex flex-col gap-3 bg-surface">
+              <h3 className="font-bold text-deep-navy text-md border-b border-outline-variant pb-2">Thane &amp; Navi Mumbai</h3>
+              <p className="text-xs text-on-surface-variant leading-relaxed">
+                Thane West, Vashi, Nerul, Belapur, Koparkhairane, Airoli, Ghansoli.
+              </p>
             </div>
           </div>
         </div>

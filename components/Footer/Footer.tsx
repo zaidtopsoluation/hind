@@ -78,7 +78,18 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-16 pt-8 border-t border-white/10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      {/* Service Areas Link Matrix for Mumbai Regional SEO */}
+      <div className="border-t border-white/10 pt-8 mt-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-xs text-surface-variant/80">
+        <p className="leading-relaxed">
+          <strong className="text-arctic-cyan">Mumbai Service Network:</strong> We provide 24/7 HVAC servicing, repair, and installations across the entire Mumbai Metropolitan Region (MMR), including:{' '}
+          <span className="text-white">Western Suburbs</span> (Andheri East/West, Bandra, Borivali, Goregaon, Juhu, Kandivali, Malad, Santacruz, Vile Parle, Khar, Dahisar),{' '}
+          <span className="text-white">Eastern Suburbs</span> (Powai, Ghatkopar, Bhandup, Kurla, Mulund, Vikhroli, Chembur, Kanjurmarg),{' '}
+          <span className="text-white">South Mumbai</span> (Dadar, Worli, Prabhadevi, Colaba, Nariman Point, Parel, Byculla, Mumbai Central, Mahalaxmi, Churchgate), and{' '}
+          <span className="text-white">Thane &amp; Navi Mumbai</span> (Thane West, Vashi, Nerul, Belapur, Koparkhairane, Airoli, Ghansoli).
+        </p>
+      </div>
+
+      <div className="mt-8 pt-8 border-t border-white/10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
         <p className="font-body-md text-body-md text-surface-variant text-sm opacity-60">
           &copy; {new Date().getFullYear()} Hind Cool Service. Professional Cooling Solutions.
         </p>
