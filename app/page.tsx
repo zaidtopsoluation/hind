@@ -1,264 +1,337 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import styles from './page.module.css';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export default function Home() {
-  // LocalBusiness Schema Markup for Hind Cool Service
-  const businessSchema = {
+  const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'HVACBusiness',
     'name': 'Hind Cool Service',
-    'image': 'https://hindcoolservice.com/hero_ac.jpg',
+    'image': 'https://hindcoolservice.com/hvac_commercial.jpg',
     '@id': 'https://hindcoolservice.com/#organization',
     'url': 'https://hindcoolservice.com',
-    'telephone': '+919876543210',
+    'telephone': '+917408381814',
     'priceRange': '₹₹',
     'address': {
       '@type': 'PostalAddress',
-      'streetAddress': 'Andheri West',
+      'streetAddress': 'Saki Naka, Andheri East',
       'addressLocality': 'Mumbai',
       'addressRegion': 'Maharashtra',
-      'postalCode': '400053',
+      'postalCode': '400072',
       'addressCountry': 'IN'
     },
     'geo': {
       '@type': 'GeoCoordinates',
-      'latitude': 19.1363,
-      'longitude': 72.8276
+      'latitude': 19.0968,
+      'longitude': 72.8882
     },
     'openingHoursSpecification': [
       {
         '@type': 'OpeningHoursSpecification',
         'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        'opens': '08:00',
-        'closes': '20:00'
+        'opens': '09:00',
+        'closes': '19:00'
       },
       {
         '@type': 'OpeningHoursSpecification',
         'dayOfWeek': 'Saturday',
-        'opens': '09:00',
-        'closes': '18:00'
+        'opens': '10:00',
+        'closes': '16:00'
       },
       {
         '@type': 'OpeningHoursSpecification',
         'dayOfWeek': 'Sunday',
         'opens': '00:00',
-        'closes': '23:59',
-        'description': 'Emergency Services Only'
+        'closes': '00:00',
+        'description': 'Closed (Emergency Only)'
       }
     ],
     'aggregateRating': {
       '@type': 'AggregateRating',
       'ratingValue': '4.9',
-      'reviewCount': '124'
+      'reviewCount': '186'
     }
   };
 
+  const serviceItems = [
+    {
+      id: 'vrf',
+      title: 'VRF / VRV System Installation',
+      icon: 'hvac',
+      description: 'Variable Refrigerant Flow (VRF) and Variable Refrigerant Volume (VRV) systems offer unparalleled energy efficiency and precise zonal climate control. Ideal for large-scale commercial facilities and premium multi-story residences requiring modular scalability.',
+      param: 'vrf'
+    },
+    {
+      id: 'ductable',
+      title: 'Ductable AC Services',
+      icon: 'air',
+      description: 'Concealed ductable split systems provide uniform cooling across expansive layouts without compromising interior aesthetics. We specialize in precise duct routing, load calculation, and unobtrusive grille installations for retail and office environments.',
+      param: 'ductable'
+    },
+    {
+      id: 'splits',
+      title: 'Hi-Wall Splits & Window AC',
+      icon: 'split_screen',
+      description: 'Rapid deployment, high-performance individual room cooling. Our technicians ensure pristine wall-mounting, optimal placement for airflow dynamics, and rigorous leak-testing for long-lasting, whisper-quiet operation in any space.',
+      param: 'split'
+    },
+    {
+      id: 'package',
+      title: 'Package AC Units',
+      icon: 'ad_units',
+      description: 'Robust, self-contained cooling powerhouses designed for demanding commercial applications like banquet halls, restaurants, and server rooms. We handle the heavy lifting, structural integration, and high-capacity electrical setups required.',
+      param: 'package'
+    }
+  ];
+
   return (
-    <div className={styles.page}>
-      {/* Schema Injection */}
-      <SchemaMarkup data={businessSchema} />
+    <div className="w-full">
+      {/* Dynamic Schema Injection */}
+      <SchemaMarkup data={localBusinessSchema} />
 
       {/* Hero Section */}
-      <section className={styles.hero} aria-label="Introduction">
-        <div className={`container ${styles.heroContainer}`}>
-          <div className={styles.heroContent}>
-            <div className={styles.badge}>
-              <span className={styles.badgeIcon}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
+      <section className="relative min-h-[80vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-12 md:py-20 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hvac_commercial.jpg"
+            alt="Advanced commercial HVAC assembly indicating precision engineering"
+            fill
+            priority
+            className="object-cover opacity-30"
+            sizes="100vw"
+          />
+          {/* Soft gradient overlay to blend image into background color */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent"></div>
+        </div>
+
+        <div className="relative z-10 max-w-container-max w-full mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+          <div className="md:col-span-8 lg:col-span-7 flex flex-col gap-6">
+            <div className="inline-flex items-center gap-2 bg-ice-wash border border-arctic-cyan/30 text-secondary font-label-sm text-label-sm px-4 py-2 rounded-full w-fit">
+              <span className="material-symbols-outlined text-arctic-cyan" style={{ fontSize: '16px' }}>
+                verified
               </span>
-              Mumbai's Premier Cooling Experts
+              10+ Years Expertise in Mumbai
             </div>
             
-            <h1 className={styles.title}>
-              Reliable Thermal Comfort, Engineered for You.
+            <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-deep-navy leading-tight">
+              Reliable Thermal Comfort, <br className="hidden md:block" />
+              <span className="text-arctic-cyan relative inline-block">
+                Engineered for You.
+                {/* Subtle underline accent */}
+                <span className="absolute bottom-1 left-0 w-full h-3 bg-surface-variant -z-10 rounded-full opacity-60"></span>
+              </span>
             </h1>
             
-            <p className={styles.description}>
-              Precision AC repair, seamless installation, and comprehensive maintenance across Mumbai. Experience professional cooling solutions with unmatched dependability.
+            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+              Professional cooling solutions delivering precise temperature control for residential and commercial spaces. High-end installation, rapid diagnostics, and meticulous maintenance designed for Mumbai's climate.
             </p>
             
-            <div className={styles.heroActions}>
-              <Link href="/contact?service=emergency" className="btn btn-accent" style={{ background: '#8b4f00' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                  </svg>
-                  Book Emergency Repair
-                </span>
-              </Link>
-              <Link href="/services" className="btn btn-outline">
+            <div className="flex flex-col sm:flex-row gap-4 mt-4">
+              <a
+                href="#services"
+                className="bg-deep-navy text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-full hover:bg-arctic-cyan transition-all duration-300 shadow-cool flex items-center justify-center gap-2 group active:scale-95"
+              >
                 Explore Services
-              </Link>
+                <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
+                  arrow_forward
+                </span>
+              </a>
+              <a
+                href="tel:+917408381814"
+                className="bg-transparent border-2 border-deep-navy text-deep-navy font-label-lg text-label-lg px-8 py-4 rounded-full hover:bg-ice-wash transition-colors duration-300 flex items-center justify-center gap-2 active:scale-95"
+              >
+                <span className="material-symbols-outlined">call</span>
+                Emergency Repair Call
+              </a>
             </div>
-
-            <div className={styles.trustIndicators}>
-              <div className={styles.trustItem}>
-                <span className={styles.trustIcon}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                Certified Techs
-              </div>
-              <div className={styles.trustItem}>
-                <span className={styles.trustIconBlue}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polyline points="12 6 12 12 16 14"></polyline>
-                  </svg>
-                </span>
-                24/7 Availability
-              </div>
-              <div className={styles.trustItem}>
-                <span className={styles.trustIconOrange}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                  </svg>
-                </span>
-                4.9/5 Rating
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.heroImageContainer}>
-            <Image
-              src="/hero_ac.jpg"
-              alt="Advanced Air Conditioning and Cooling System Internal Assembly"
-              fill
-              className={styles.heroImage}
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
           </div>
         </div>
       </section>
 
-      {/* Services Overview Section */}
-      <section className={`section-padding ${styles.servicesSection}`} aria-labelledby="services-heading">
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <h2 id="services-heading" className={styles.sectionTitle}>Comprehensive Cooling Solutions</h2>
-            <p className={styles.sectionSubtitle}>
-              From rapid repairs to systematic maintenance, we ensure your environment remains perfectly calibrated.
-            </p>
-          </div>
+      {/* Spacer / Transition */}
+      <div className="breathe-divider" aria-hidden="true"></div>
 
-          <div className={styles.servicesGrid}>
-            {/* Diagnostic Repair */}
-            <article className={styles.serviceCard}>
-              <div className={`${styles.iconWrapper} ${styles.iconWrapperBlue}`}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                </svg>
-              </div>
-              <h3 className={styles.cardTitle}>Diagnostic Repair</h3>
-              <p className={styles.cardDescription}>
-                Rapid-response troubleshooting for all AC brands. We diagnose accurately and fix efficiently to restore your comfort immediately.
-              </p>
-              <Link href="/services#repair" className={styles.cardLink}>
-                View Repair Options <span>&rarr;</span>
-              </Link>
-            </article>
+      {/* Services Grid Section (Incorporated directly onto home page) */}
+      <section id="services" className="px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+        <div className="text-center mb-16 max-w-2xl mx-auto">
+          <h2 className="font-headline-lg text-headline-lg text-deep-navy mb-4">Precision Engineering</h2>
+          <p className="font-body-md text-body-md text-on-surface-variant">
+            Comprehensive climate control services tailored to ensure optimal efficiency and longevity of your cooling systems.
+          </p>
+        </div>
 
-            {/* Precision Installation */}
-            <article className={styles.serviceCard}>
-              <div className={`${styles.iconWrapper} ${styles.iconWrapperIndigo}`}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-                </svg>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {serviceItems.map((item) => (
+            <div
+              key={item.id}
+              className="glass-panel rounded-xl p-8 cool-shadow group hover:-translate-y-1 transition-transform duration-300 flex flex-col h-full bg-surface-container-lowest relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-ice-wash rounded-bl-full -mr-16 -mt-16 opacity-50 transition-transform group-hover:scale-110 duration-500"></div>
+              
+              <div className="w-14 h-14 rounded-full bg-ice-wash flex items-center justify-center text-arctic-cyan mb-6 relative z-10">
+                <span className="material-symbols-outlined text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  {item.icon}
+                </span>
               </div>
-              <h3 className={styles.cardTitle}>Precision Installation</h3>
-              <p className={styles.cardDescription}>
-                Flawless setup of Split, Window, and Central AC systems, optimized for maximum airflow and energy efficiency.
+              
+              <h3 className="font-headline-md text-headline-md text-deep-navy mb-3 relative z-10">
+                {item.title}
+              </h3>
+              
+              <p className="font-body-md text-body-md text-on-surface-variant mb-8 flex-grow relative z-10">
+                {item.description}
               </p>
-              <Link href="/services#installation" className={styles.cardLink}>
-                Explore Installations <span>&rarr;</span>
-              </Link>
-            </article>
+              
+              <a
+                href="tel:+917408381814"
+                className="inline-flex items-center justify-center w-full sm:w-fit px-6 py-3 rounded-full bg-surface text-deep-navy border border-outline-variant font-label-lg text-label-lg hover:bg-deep-navy hover:text-white transition-colors duration-300 relative z-10 group/btn"
+              >
+                <span className="material-symbols-outlined mr-2 group-hover/btn:rotate-12 transition-transform">
+                  call
+                </span>
+                Inquire via Call
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
 
-            {/* Annual Maintenance */}
-            <article className={styles.serviceCard}>
-              <div className={`${styles.iconWrapper} ${styles.iconWrapperOrange}`}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="16" y1="2" x2="16" y2="6"></line>
-                  <line x1="8" y1="2" x2="8" y2="6"></line>
-                  <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-              </div>
-              <h3 className={styles.cardTitle}>Annual Maintenance</h3>
-              <p className={styles.cardDescription}>
-                Preventative care contracts (AMC) designed to extend equipment lifespan and maintain peak cooling performance year-round.
+      {/* Annual Maintenance Contract (AMC) Section */}
+      <section className="bg-ice-wash py-20 relative overflow-hidden border-t border-surface-container-highest">
+        {/* Decorative Background Element */}
+        <div className="absolute right-0 bottom-0 transform translate-x-1/3 translate-y-1/3 opacity-10 pointer-events-none">
+          <span className="material-symbols-outlined" style={{ fontSize: '400px', fontVariationSettings: "'FILL' 1" }}>
+            shield
+          </span>
+        </div>
+        
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5">
+              <h2 className="font-headline-lg text-headline-lg text-deep-navy mb-4">Comprehensive Care Plans</h2>
+              <p className="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                Protect your investment with our Annual Maintenance Contracts (AMC). Scheduled servicing prevents unexpected breakdowns, maintains peak air quality, and significantly extends the lifespan of your cooling infrastructure.
               </p>
-              <Link href="/services#amc" className={styles.cardLink}>
-                See AMC Plans <span>&rarr;</span>
-              </Link>
-            </article>
+              <a
+                href="tel:+917408381814"
+                className="bg-deep-navy text-on-primary font-label-lg text-label-lg px-8 py-3.5 rounded-full hover:bg-arctic-cyan transition-colors duration-300 shadow-md inline-block text-center active:scale-95"
+              >
+                Discuss AMC via Call
+              </a>
+            </div>
+
+            <div className="lg:col-span-7">
+              <div className="glass-panel bg-white/60 rounded-xl p-8 border border-white cool-shadow">
+                <h3 className="font-headline-md text-headline-md text-deep-navy mb-6 border-b border-surface-container-highest pb-4">
+                  AMC Benefits &amp; Inclusions
+                </h3>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-8">
+                  <li className="flex items-start">
+                    <span className="material-symbols-outlined text-arctic-cyan mr-3 mt-0.5">check_circle</span>
+                    <span className="font-body-md text-body-md text-on-surface">Priority Emergency Response</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="material-symbols-outlined text-arctic-cyan mr-3 mt-0.5">check_circle</span>
+                    <span className="font-body-md text-body-md text-on-surface">Deep Chemical Coil Cleaning</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="material-symbols-outlined text-arctic-cyan mr-3 mt-0.5">check_circle</span>
+                    <span className="font-body-md text-body-md text-on-surface">Refrigerant Level Diagnostics</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="material-symbols-outlined text-arctic-cyan mr-3 mt-0.5">check_circle</span>
+                    <span className="font-body-md text-body-md text-on-surface">Electrical Component Audits</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="material-symbols-outlined text-arctic-cyan mr-3 mt-0.5">check_circle</span>
+                    <span className="font-body-md text-body-md text-on-surface">Filter Replacement &amp; Sanitization</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="material-symbols-outlined text-arctic-cyan mr-3 mt-0.5">check_circle</span>
+                    <span className="font-body-md text-body-md text-on-surface">Zero Labor Charges on Repairs</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className={`section-padding ${styles.testimonialsSection}`} aria-labelledby="testimonials-heading">
-        <div className="container">
-          <div className={styles.testimonialsContainer}>
-            
-            <div className={styles.testimonialsLeft}>
-              <h2 id="testimonials-heading" className={styles.testimonialsLeftTitle}>Trusted by Mumbai</h2>
-              <p className={styles.testimonialsLeftText}>
-                Don't just take our word for it. See why homes and businesses across the city rely on our thermal expertise.
+      {/* Testimonials Bento Style Section */}
+      <section className="bg-ice-wash/50 py-20 border-t border-b border-surface-container-highest">
+        <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+              <h2 className="font-headline-lg text-headline-lg text-deep-navy mb-2">Trusted by Mumbai</h2>
+              <p className="font-body-md text-body-md text-on-surface-variant max-w-xl">
+                From high-rise apartments in Bandra to commercial offices in Andheri, we deliver consistent, premium cooling experiences.
               </p>
-              <div className={styles.ratingContainer}>
-                <div className={styles.stars}>
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                    </svg>
-                  ))}
+            </div>
+            <div className="flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm border border-surface-container-highest">
+              <span className="material-symbols-outlined text-warning-amber" style={{ fontVariationSettings: "'FILL' 1" }}>
+                star
+              </span>
+              <span className="font-label-lg text-label-lg text-deep-navy">4.9/5 Average Rating</span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4">
+            {/* Large Testimonial */}
+            <div className="md:col-span-2 md:row-span-2 bg-white rounded-xl p-8 cool-shadow flex flex-col justify-between border border-surface-container-highest">
+              <span className="material-symbols-outlined text-surface-dim mb-6" style={{ fontSize: '48px', fontVariationSettings: "'FILL' 1" }}>
+                format_quote
+              </span>
+              <p className="font-body-lg text-body-lg text-on-surface mb-8 italic leading-relaxed">
+                "The team from Hind Cool Service completely overhauled our office HVAC system. The precision in their installation and the immediate difference in air quality and temperature regulation was astounding. Truly professional and reliable."
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-surface-dim">
+                  <Image
+                    src="/tech_rajesh.jpg"
+                    alt="Rajesh Sharma, Operations Director at TechNova BKC"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <div className={styles.ratingText}>4.9 Average Rating</div>
+                <div>
+                  <h4 className="font-label-lg text-label-lg text-deep-navy">Rajesh Sharma</h4>
+                  <p className="font-label-sm text-label-sm text-on-surface-variant">Operations Director, TechNova BKC</p>
+                </div>
               </div>
             </div>
 
-            <div className={styles.testimonialsList}>
-              {/* Amit K */}
-              <blockquote className={styles.testimonialCard}>
-                <div className={styles.testimonialHeader}>
-                  <div className={styles.authorInfo}>
-                    <div className={styles.authorAvatar}>AK</div>
-                    <div className={styles.authorDetails}>
-                      <cite className={styles.authorName}>Amit K.</cite>
-                      <span className={styles.authorLocation}>Andheri West, Mumbai</span>
-                    </div>
-                  </div>
-                </div>
-                <p className={styles.testimonialText}>
-                  "Extremely professional service. The technician arrived on time, diagnosed the compressor issue quickly, and had our AC running perfectly within an hour. Highly recommend."
-                </p>
-              </blockquote>
-
-              {/* Priya S */}
-              <blockquote className={styles.testimonialCard}>
-                <div className={styles.testimonialHeader}>
-                  <div className={styles.authorInfo}>
-                    <div className={styles.authorAvatar}>PS</div>
-                    <div className={styles.authorDetails}>
-                      <cite className={styles.authorName}>Priya S.</cite>
-                      <span className={styles.authorLocation}>Bandra, Mumbai</span>
-                    </div>
-                  </div>
-                </div>
-                <p className={styles.testimonialText}>
-                  "Signed up for their AMC plan last year. The periodic maintenance is thorough, and the staff is very polite. The cooling efficiency has noticeably improved."
-                </p>
-              </blockquote>
+            {/* Small Testimonial 1 */}
+            <div className="md:col-span-2 md:row-span-1 bg-deep-navy text-white rounded-xl p-6 shadow-cool relative overflow-hidden flex flex-col justify-between">
+              {/* Decorative background element */}
+              <span className="material-symbols-outlined absolute -right-4 -bottom-4 text-white/5 pointer-events-none" style={{ fontSize: '120px' }}>
+                ac_unit
+              </span>
+              <div className="flex gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="material-symbols-outlined text-warning-amber" style={{ fontVariationSettings: "'FILL' 1', fontSize: '18px" }}>
+                    star
+                  </span>
+                ))}
+              </div>
+              <p className="font-body-md text-body-md text-white mb-4 opacity-90 relative z-10 leading-relaxed">
+                "Fast emergency response when our AC broke down in the middle of May. The technician was knowledgeable, polite, and resolved the issue rapidly."
+              </p>
+              <h4 className="font-label-sm text-label-sm text-primary-fixed-dim relative z-10">- Priya M., Residential Client (Bandra)</h4>
             </div>
 
+            {/* Small Stats Box 1 */}
+            <div className="md:col-span-1 md:row-span-1 bg-surface-container-high rounded-xl p-6 shadow-sm flex flex-col justify-center items-center text-center border border-surface-container-highest/50">
+              <span className="font-display-lg text-display-lg text-arctic-cyan mb-2">5k+</span>
+              <span className="font-label-sm text-label-sm text-deep-navy">Installations Completed</span>
+            </div>
+
+            {/* Small Stats Box 2 */}
+            <div className="md:col-span-1 md:row-span-1 glassmorphism rounded-xl p-6 shadow-sm flex flex-col justify-center items-center text-center">
+              <span className="material-symbols-outlined text-deep-navy mb-2" style={{ fontSize: '40px' }}>
+                workspace_premium
+              </span>
+              <span className="font-label-sm text-label-sm text-on-surface-variant">Certified Technicians</span>
+            </div>
           </div>
         </div>
       </section>

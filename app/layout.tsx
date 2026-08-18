@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
-  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 });
 
@@ -16,35 +15,33 @@ export const metadata: Metadata = {
     default: 'Hind Cool Service | Premium AC Repair & Installation in Mumbai',
     template: '%s | Hind Cool Service'
   },
-  description: 'Hind Cool Service offers expert AC repair, gas charging, deep cleaning, and Annual Maintenance Contracts (AMC) across Mumbai, including Andheri West, Bandra, and Juhu. Certified technicians and 24/7 emergency support.',
+  description: 'Hind Cool Service offers expert HVAC solutions, VRF/VRV systems, ductable AC, split AC, and Annual Maintenance Contracts (AMC) across Mumbai, including Andheri East and Saki Naka.',
   keywords: [
     'AC Repair Mumbai',
-    'AC Installation Andheri West',
-    'AC Servicing Mumbai',
+    'VRF Systems Mumbai',
+    'Ductable AC Mumbai',
     'Split AC installation',
-    'Window AC repair',
+    'AC servicing Saki Naka',
     'AC AMC plans Mumbai',
-    'Emergency AC repair Mumbai',
-    'Gas charging Mumbai',
-    'Foam jet cleaning AC'
+    'Emergency AC repair Mumbai'
   ],
   authors: [{ name: 'Hind Cool Service' }],
   creator: 'Hind Cool Service',
-  metadataBase: new URL('https://hindcoolservice.com'), // Replace with actual production domain when available
+  metadataBase: new URL('https://hindcoolservice.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Hind Cool Service | Premium AC Repair & Installation in Mumbai',
-    description: 'Expert AC servicing, repair, and installation in Mumbai. Quick diagnostic repairs, professional setup, and affordable Annual Maintenance Contracts with certified technicians.',
+    description: 'Expert HVAC engineering, VRF/VRV installation, ductable splits, and professional AMC contracts with certified technicians in Mumbai.',
     url: 'https://hindcoolservice.com',
     siteName: 'Hind Cool Service',
     images: [
       {
-        url: '/hero_ac.jpg',
+        url: '/hvac_commercial.jpg',
         width: 1200,
-        height: 900,
-        alt: 'Hind Cool Service AC Cooling Unit',
+        height: 675,
+        alt: 'Hind Cool Service HVAC Systems',
       },
     ],
     locale: 'en_IN',
@@ -53,19 +50,12 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Hind Cool Service | AC Repair & Installation in Mumbai',
-    description: 'Reliable AC repair, installation, and AMC contracts across Mumbai. 24/7 availability with certified technicians.',
-    images: ['/hero_ac.jpg'],
+    description: 'Reliable commercial and residential HVAC servicing across Mumbai. 24/7 priority emergency support.',
+    images: ['/hvac_commercial.jpg'],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
 };
 
@@ -75,13 +65,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={plusJakartaSans.variable}>
+    <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" 
+          rel="stylesheet" 
+        />
       </head>
-      <body>
+      <body className="bg-surface text-on-surface antialiased flex flex-col min-h-screen">
         <Header />
-        <main id="main-content" style={{ flex: 1 }}>
+        <main className="flex-grow pt-20 md:pt-24">
           {children}
         </main>
         <Footer />

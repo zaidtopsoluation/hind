@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import styles from './page.module.css';
 
 export default function ContactForm() {
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
+    firstName: '',
+    lastName: '',
+    email: '',
     service: '',
     message: '',
   });
@@ -17,10 +17,14 @@ export default function ContactForm() {
   useEffect(() => {
     const serviceParam = searchParams.get('service');
     if (serviceParam) {
-      setFormData((prev) => ({
-        ...prev,
-        service: serviceParam,
-      }));
+      // Map params like 'split', 'vrf', etc. to the dropdown values
+      const validServices = ['vrf', 'ductable', 'splits', 'package', 'amc', 'emergency'];
+      if (validServices.includes(serviceParam)) {
+        setFormData((prev) => ({
+          ...prev,
+          service: serviceParam,
+        }));
+      }
     }
   }, [searchParams]);
 
@@ -36,11 +40,12 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.phone) {
+    if (formData.firstName && formData.email) {
       setIsSubmitted(true);
       setFormData({
-        name: '',
-        phone: '',
+        firstName: '',
+        lastName: '',
+        email: '',
         service: '',
         message: '',
       });
@@ -49,103 +54,109 @@ export default function ContactForm() {
   };
 
   return (
-    <section className={styles.formCard} aria-labelledby="send-message-heading">
-      <h2 id="send-message-heading" className={styles.formTitle}>
-        <span className={styles.formIcon} aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
-        </span>
+    <section className="bg-white rounded-xl p-8 cool-shadow border border-surface-container-highest flex flex-col gap-6" aria-labelledby="send-message-heading">
+      <h2 id="send-message-heading" className="font-headline-md text-headline-md text-deep-navy mb-2 flex items-center gap-2">
         Send a Message
       </h2>
 
       {isSubmitted && (
-        <div className={styles.successMessage} role="alert">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          Thank you! Your service request has been submitted successfully. We will call you shortly.
+        <div className="bg-success-mint/10 border border-success-mint text-success-mint p-4 rounded-lg font-semibold text-sm flex items-center gap-2 animate-fadeIn" role="alert">
+          <span className="material-symbols-outlined">check_circle</span>
+          Thank you! Your message has been sent successfully. We will get in touch with you shortly.
         </div>
       )}
 
-      <form onSubmit={handleSubmit}>
-        <div className={styles.formGroupRow}>
-          <div className={styles.formGroup}>
-            <label htmlFor="name-input" className={styles.label}>
-              Full Name
+      <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="flex flex-col gap-2">
+            <label htmlFor="firstName" className="text-xs font-bold text-deep-navy tracking-wide">
+              First Name
             </label>
             <input
               type="text"
-              id="name-input"
-              name="name"
-              placeholder="John Doe"
-              value={formData.name}
+              id="firstName"
+              name="firstName"
+              placeholder="John"
+              value={formData.firstName}
               onChange={handleChange}
               required
-              className={styles.input}
+              className="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface hover:border-outline focus:border-deep-navy focus:bg-white transition-all outline-none"
             />
           </div>
-
-          <div className={styles.formGroup}>
-            <label htmlFor="phone-input" className={styles.label}>
-              Phone Number
+          <div className="flex flex-col gap-2">
+            <label htmlFor="lastName" className="text-xs font-bold text-deep-navy tracking-wide">
+              Last Name
             </label>
             <input
-              type="tel"
-              id="phone-input"
-              name="phone"
-              placeholder="+91 98765 43210"
-              value={formData.phone}
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Doe"
+              value={formData.lastName}
               onChange={handleChange}
-              required
-              className={styles.input}
+              className="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface hover:border-outline focus:border-deep-navy focus:bg-white transition-all outline-none"
             />
           </div>
         </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="service-select" className={styles.label}>
-            Service Required
+        <div className="flex flex-col gap-2">
+          <label htmlFor="email" className="text-xs font-bold text-deep-navy tracking-wide">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="john.doe@example.com"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface hover:border-outline focus:border-deep-navy focus:bg-white transition-all outline-none"
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="service" className="text-xs font-bold text-deep-navy tracking-wide">
+            Service of Interest
           </label>
           <select
-            id="service-select"
+            id="service"
             name="service"
             value={formData.service}
             onChange={handleChange}
             required
-            className={styles.select}
+            className="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface hover:border-outline focus:border-deep-navy focus:bg-white transition-all outline-none"
           >
-            <option value="">Select a service type</option>
-            <option value="emergency">Emergency AC Repair (Inspection Fee ₹299)</option>
-            <option value="installation">Split & Window Installation (Starts ₹1,499)</option>
-            <option value="gas-charging">Gas Charging & Leak Repair (Starts ₹2,100)</option>
-            <option value="deep-cleaning">Foam Jet Deep Cleaning (Starts ₹599)</option>
-            <option value="amc">Annual Maintenance Contract (AMC) (Starts ₹2,499)</option>
+            <option value="">Select a service</option>
+            <option value="vrf">VRF / VRV Systems</option>
+            <option value="ductable">Ductable AC</option>
+            <option value="splits">Split AC</option>
+            <option value="package">Package AC</option>
+            <option value="amc">Maintenance / AMC</option>
+            <option value="emergency">Emergency AC Repair</option>
           </select>
         </div>
 
-        <div className={styles.formGroup}>
-          <label htmlFor="message-textarea" className={styles.label}>
-            Message / Issue Details
+        <div className="flex flex-col gap-2">
+          <label htmlFor="message" className="text-xs font-bold text-deep-navy tracking-wide">
+            Message
           </label>
           <textarea
-            id="message-textarea"
+            id="message"
             name="message"
-            placeholder="Describe the issue you're experiencing..."
+            placeholder="How can we help you stay cool?"
             value={formData.message}
             onChange={handleChange}
-            className={styles.textarea}
+            rows={4}
+            className="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface hover:border-outline focus:border-deep-navy focus:bg-white transition-all outline-none resize-none"
           ></textarea>
         </div>
 
-        <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
-          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-            Submit Request
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="22" y1="2" x2="11" y2="13"></line>
-              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-            </svg>
-          </span>
+        <button
+          type="submit"
+          className="w-full bg-deep-navy text-on-primary font-label-lg text-label-lg py-4 rounded-lg hover:bg-arctic-cyan transition-colors duration-300 active:scale-95 shadow-md mt-2 font-bold"
+        >
+          Send Message
         </button>
       </form>
     </section>

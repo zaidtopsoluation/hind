@@ -1,78 +1,94 @@
-import Link from 'next/link';
-import styles from './Footer.module.css';
-
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className="container">
-        <div className={styles.grid}>
-          {/* Logo and Description */}
-          <div className={styles.logoCol}>
-            <Link href="/" className={styles.logo}>
-              <span className={styles.logoIcon} aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2V22M12 2L15 5M12 2L9 5M12 22L15 19M12 22L9 19M2 12H22M2 12L5 9M2 12L5 15M22 12L19 9M22 12L19 15M17 7L7 17M17 7L18 10M17 7L14 8M7 17L6 14M7 17L10 16M7 7L17 17M7 7L6 10M7 7L10 8M17 17L18 14M17 17L14 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+    <footer className="bg-deep-navy w-full pt-16 pb-8 shadow-inner text-white">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+        {/* Brand Column */}
+        <div className="col-span-1 flex flex-col gap-4">
+          <a href="/" className="font-headline-md text-headline-md text-on-primary flex items-center gap-2 text-2xl font-bold">
+            <span className="material-symbols-outlined text-arctic-cyan" style={{ fontVariationSettings: "'FILL' 1" }}>
+              ac_unit
+            </span>
+            Hind Cool
+          </a>
+          <p className="font-body-md text-body-md text-surface-variant mt-2 text-sm opacity-80 pr-4">
+            Elevating indoor comfort through precision engineering and dedicated professional service across Mumbai.
+          </p>
+        </div>
+
+        {/* Links Column 1 */}
+        <div className="col-span-1">
+          <h4 className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Systems</h4>
+          <ul className="flex flex-col gap-3">
+            <li>
+              <a href="/services#vrf" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                VRV/VRF Systems
+              </a>
+            </li>
+            <li>
+              <a href="/services#ductable" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                Ductable AC
+              </a>
+            </li>
+            <li>
+              <a href="/services#splits" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                Split AC
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Links Column 2 */}
+        <div className="col-span-1">
+          <h4 className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Company</h4>
+          <ul className="flex flex-col gap-3">
+            <li>
+              <a href="/about" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                Saki Naka Office
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a href="/privacy" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Contact Column */}
+        <div className="col-span-1">
+          <h4 className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Get in Touch</h4>
+          <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-3 text-surface-variant">
+              <span className="material-symbols-outlined text-sm">call</span>
+              <a href="tel:+917408381814" className="font-body-md text-body-md text-sm hover:text-white transition-colors">+91 74083 81814</a>
+            </div>
+            <div className="flex items-start gap-3 text-surface-variant">
+              <span className="material-symbols-outlined text-sm mt-0.5">location_on</span>
+              <span className="font-body-md text-body-md text-sm leading-relaxed">
+                Saki Naka, Andheri East,<br />
+                Mumbai 400072
               </span>
-              Hind Cool Service
-            </Link>
-            <p className={styles.description}>
-              Reliable Thermal Comfort. Your premier choice for AC repair, seamless installation, and comprehensive maintenance in Mumbai.
-            </p>
-          </div>
-
-          {/* Quick Links / Services */}
-          <div>
-            <h3 className={styles.colTitle}>Services</h3>
-            <ul className={styles.linksList}>
-              <li>
-                <Link href="/services" className={styles.link}>
-                  AC Repair
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className={styles.link}>
-                  Installation
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className={styles.link}>
-                  Maintenance
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Address and Legal Info */}
-          <div>
-            <h3 className={styles.colTitle}>Information</h3>
-            <div className={styles.infoList}>
-              <div className={styles.infoItem}>
-                <span className={styles.infoIcon} aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                </span>
-                <span>Andheri West, Mumbai, Maharashtra 400053</span>
-              </div>
-              <div className={styles.legalLinks}>
-                <Link href="/privacy" className={styles.link}>
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" className={styles.link}>
-                  Terms of Service
-                </Link>
-              </div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className={styles.bottomBar}>
-          <p className={styles.copyright}>
-            &copy; {new Date().getFullYear()} Hind Cool Service Mumbai. All rights reserved.
-          </p>
+      <div className="mt-16 pt-8 border-t border-white/10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <p className="font-body-md text-body-md text-surface-variant text-sm opacity-60">
+          &copy; {new Date().getFullYear()} Hind Cool Service. Professional Cooling Solutions.
+        </p>
+        <div className="flex gap-4">
+          <a href="#" className="text-surface-variant hover:text-white transition-colors" aria-label="Language selection">
+            <span className="material-symbols-outlined">language</span>
+          </a>
+          <a href="#" className="text-surface-variant hover:text-white transition-colors" aria-label="Share location">
+            <span className="material-symbols-outlined">share</span>
+          </a>
         </div>
       </div>
     </footer>
