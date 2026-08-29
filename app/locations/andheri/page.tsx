@@ -15,7 +15,7 @@ export default function AndheriLocationPage() {
     '@context': 'https://schema.org',
     '@type': 'HVACBusiness',
     'name': 'Hind Cool Service - Head Office (Andheri)',
-    'image': 'https://hindcoolservice.com/hvac_commercial.jpg',
+    'image': 'https://hindcool.com/hvac_commercial.jpg',
     'telephone': '+917408381814',
     'priceRange': '₹₹',
     'address': {

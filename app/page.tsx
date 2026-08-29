@@ -6,9 +6,9 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'HVACBusiness',
     'name': 'Hind Cool Service',
-    'image': 'https://hindcoolservice.com/hvac_commercial.jpg',
-    '@id': 'https://hindcoolservice.com/#organization',
-    'url': 'https://hindcoolservice.com',
+    'image': 'https://hindcool.com/hvac_commercial.jpg',
+    '@id': 'https://hindcool.com/#organization',
+    'url': 'https://hindcool.com',
     'telephone': '+917408381814',
     'founder': {
       '@type': 'Person',
@@ -69,6 +69,14 @@ export default function Home() {
     }
   };
 
+  const webSiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    'name': 'Hind Cool Service',
+    'alternateName': ['Hind Cool', 'Hind Cool AC Service'],
+    'url': 'https://hindcool.com',
+  };
+
   const serviceItems = [
     {
       id: 'vrf',
@@ -87,7 +95,7 @@ export default function Home() {
     {
       id: 'splits',
       title: 'Hi-Wall Splits & Window AC',
-      icon: 'split_screen',
+      icon: 'splitscreen',
       description: 'Rapid deployment, high-performance individual room cooling. Our technicians ensure pristine wall-mounting, optimal placement for airflow dynamics, and rigorous leak-testing for long-lasting, whisper-quiet operation in any space.',
       param: 'split'
     },
@@ -104,6 +112,7 @@ export default function Home() {
     <div className="w-full">
       {/* Dynamic Schema Injection */}
       <SchemaMarkup data={localBusinessSchema} />
+      <SchemaMarkup data={webSiteSchema} />
 
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-12 md:py-20 overflow-hidden">

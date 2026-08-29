@@ -29,7 +29,7 @@ export default function ServicesPage() {
     {
       id: 'splits',
       title: 'Hi-Wall Splits & Window AC',
-      icon: 'split_screen',
+      icon: 'splitscreen',
       description: 'Rapid deployment, high-performance individual room cooling. Our technicians ensure pristine wall-mounting, optimal placement for airflow dynamics, and rigorous leak-testing for long-lasting, whisper-quiet operation in any space.',
       param: 'splits'
     },

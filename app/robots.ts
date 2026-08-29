@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: [],
     },
-    sitemap: 'https://hindcoolservice.com/sitemap.xml',
+    sitemap: 'https://hindcool.com/sitemap.xml',
   };
 }

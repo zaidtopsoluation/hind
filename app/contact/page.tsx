@@ -18,7 +18,7 @@ export default function ContactPage() {
     '@type': 'ContactPage',
     'name': 'Contact Hind Cool Service Mumbai',
     'description': 'Contact details and service request form for Hind Cool Service in Saki Naka, Mumbai.',
-    'url': 'https://hindcoolservice.com/contact',
+    'url': 'https://hindcool.com/contact',
     'mainEntity': {
       '@type': 'HVACBusiness',
       'name': 'Hind Cool Service',

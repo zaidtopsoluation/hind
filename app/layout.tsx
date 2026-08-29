@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Hind Cool Service' }],
   creator: 'Hind Cool Service',
-  metadataBase: new URL('https://hindcoolservice.com'),
+  metadataBase: new URL('https://hindcool.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Hind Cool Service | Premium AC Repair & Installation in Mumbai',
     description: 'Expert HVAC engineering, VRF/VRV installation, ductable splits, and professional AMC contracts with certified technicians in Mumbai.',
-    url: 'https://hindcoolservice.com',
+    url: 'https://hindcool.com',
     siteName: 'Hind Cool Service',
     images: [
       {
