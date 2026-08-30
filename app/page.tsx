@@ -136,7 +136,7 @@ export default function Home() {
               <span className="material-symbols-outlined text-arctic-cyan" style={{ fontSize: '16px' }}>
                 verified
               </span>
-              10+ Years Expertise in Mumbai
+              AC Service Near You | 10+ Years Expertise
             </div>
             
             <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-deep-navy leading-tight">
@@ -288,10 +288,10 @@ export default function Home() {
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="text-center mb-12 max-w-2xl mx-auto flex flex-col gap-3">
             <h2 className="font-headline-lg text-headline-lg text-deep-navy font-bold">
-              Air Conditioning Service Coverage in Mumbai
+              AC Service &amp; AC Repair Near You in Mumbai
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant">
-              Hind Cool Service provides priority dispatch to residential properties, offices, and commercial establishments in all sectors of Mumbai.
+              Hind Cool Service provides priority dispatch to residential properties, offices, and commercial establishments in all sectors of Mumbai. Finding reliable AC repair and maintenance nearby has never been easier.
             </p>
           </div>
           
