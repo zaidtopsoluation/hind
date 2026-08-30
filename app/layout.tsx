@@ -12,17 +12,25 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Hind Cool Service | Premium AC Repair & Installation in Mumbai',
+    default: 'Hind Cool Service | Best AC Repair, Service & AC Mechanic in Mumbai',
     template: '%s | Hind Cool Service'
   },
-  description: 'Hind Cool Service offers expert HVAC solutions, VRF/VRV systems, ductable AC, split AC, and Annual Maintenance Contracts (AMC) across Mumbai, including Andheri East and Saki Naka.',
+  description: 'Looking for a reliable AC wala or AC mechanic in Mumbai? Hind Cool Service offers premium AC repair, AC servicing, VRF/VRV system installation, ductable AC maintenance, and custom AC AMC plans across Mumbai.',
   keywords: [
     'AC Repair Mumbai',
+    'AC Service Mumbai',
+    'AC Mechanic Mumbai',
+    'AC wala Mumbai',
+    'AC AMC Mumbai',
+    'AC Installation Mumbai',
     'VRF Systems Mumbai',
     'Ductable AC Mumbai',
     'Split AC installation',
     'AC servicing Saki Naka',
-    'AC AMC plans Mumbai',
+    'AC maintenance contract',
+    'Ductable AC repair Mumbai',
+    'VRF AC service Mumbai',
+    'Commercial AC service Mumbai',
     'Emergency AC repair Mumbai'
   ],
   authors: [{ name: 'Hind Cool Service' }],

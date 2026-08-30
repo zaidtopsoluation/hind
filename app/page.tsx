@@ -149,7 +149,7 @@ export default function Home() {
             </h1>
             
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-              Professional cooling solutions delivering precise temperature control for residential and commercial spaces. High-end installation, rapid diagnostics, and meticulous maintenance designed for Mumbai's climate.
+              Professional AC service, repair, and installation delivering precise temperature control for residential and commercial spaces. Whether you need a skilled AC mechanic or complete VRF/ductable system maintenance, our "AC wala" technicians are ready for Mumbai's climate.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mt-4">
@@ -180,9 +180,9 @@ export default function Home() {
       {/* Services Grid Section (Incorporated directly onto home page) */}
       <section id="services" className="px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
         <div className="text-center mb-16 max-w-2xl mx-auto">
-          <h2 className="font-headline-lg text-headline-lg text-deep-navy mb-4">Precision Engineering</h2>
+          <h2 className="font-headline-lg text-headline-lg text-deep-navy mb-4">Professional AC Repair &amp; Service in Mumbai</h2>
           <p className="font-body-md text-body-md text-on-surface-variant">
-            Comprehensive climate control services tailored to ensure optimal efficiency and longevity of your cooling systems.
+            Expert AC mechanics providing comprehensive split, ductable, and VRF/VRV system installation, repair, and AMC solutions. Your trusted local "AC wala" for rapid cooling repairs.
           </p>
         </div>
 
@@ -234,9 +234,9 @@ export default function Home() {
         <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
-              <h2 className="font-headline-lg text-headline-lg text-deep-navy mb-4">Comprehensive Care Plans</h2>
+              <h2 className="font-headline-lg text-headline-lg text-deep-navy mb-4">Affordable AC AMC Plans (Annual Maintenance Contracts)</h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant mb-8">
-                Protect your investment with our Annual Maintenance Contracts (AMC). Scheduled servicing prevents unexpected breakdowns, maintains peak air quality, and significantly extends the lifespan of your cooling infrastructure.
+                Keep your cooling systems running smoothly with our custom AC AMC plans in Mumbai. From regular split AC servicing to commercial ductable and VRF/VRV maintenance, our expert AC mechanics prevent breakdown emergencies and extend system lifespan.
               </p>
               <a
                 href="tel:+917408381814"
