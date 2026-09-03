@@ -12,10 +12,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Hind Cool Service | Best AC Repair, Service & AC Mechanic in Mumbai',
+    default: 'Hind Cool Service | Best AC Repair & Service in Mumbai',
     template: '%s | Hind Cool Service'
   },
-  description: 'Looking for a reliable AC wala or AC mechanic in Mumbai? Hind Cool Service offers premium AC repair, AC servicing, VRF/VRV system installation, ductable AC maintenance, and custom AC AMC plans across Mumbai.',
+  description: 'Hind Cool Service offers premium AC repair, AC servicing, AC AMC plans, VRF/VRV installation, and ductable AC maintenance across Mumbai.',
   keywords: [
     'AC Repair Mumbai',
     'AC Service Mumbai',
