@@ -77,6 +77,45 @@ export default function Home() {
     'url': 'https://hindcool.com',
   };
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': [
+      {
+        '@type': 'Question',
+        'name': 'How quickly can an AC mechanic from Hind Cool Service reach my location in Mumbai?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'We provide priority emergency dispatch under 2 hours for AC breakdown and repair calls across Andheri, Bandra, Juhu, Saki Naka, and major Mumbai suburbs.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'What types of AC servicing and gas refilling do you offer in Mumbai?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'We offer deep jet-wash foam servicing, nitrogen leak testing, copper pipe brazing, and eco-friendly R32, R410A, and R22 refrigerant gas refilling for split, window, ductable, and VRF/VRV air conditioners.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'What is included in an AC Annual Maintenance Contract (AMC)?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'Our custom AC AMC plans include 3-4 routine deep jet services per year, 24/7 priority emergency breakdown support, free service visits, and zero labor charges on repair parts.'
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': 'Why is my AC leaking water or not cooling properly?',
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': 'AC water leakage is typically caused by clogged drain lines or coil ice buildup due to low refrigerant gas. Our certified AC mechanics perform same-day drain flushing and gas leak repairs across Mumbai.'
+        }
+      }
+    ]
+  };
+
   const serviceItems = [
     {
       id: 'vrf',
@@ -113,6 +152,7 @@ export default function Home() {
       {/* Dynamic Schema Injection */}
       <SchemaMarkup data={localBusinessSchema} />
       <SchemaMarkup data={webSiteSchema} />
+      <SchemaMarkup data={faqSchema} />
 
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-12 md:py-20 overflow-hidden">
@@ -401,6 +441,61 @@ export default function Home() {
                 workspace_premium
               </span>
               <span className="font-label-sm text-label-sm text-on-surface-variant">Certified Technicians</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions (FAQ) Section for Search Intent & Rich Snippets */}
+      <section className="bg-white py-20 border-t border-surface-container-highest">
+        <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+          <div className="text-center mb-12 max-w-2xl mx-auto flex flex-col gap-3">
+            <span className="text-xs font-bold text-arctic-cyan uppercase tracking-wider block">
+              Got Questions?
+            </span>
+            <h2 className="font-headline-lg text-headline-lg text-deep-navy font-bold">
+              Frequently Asked AC Service Questions
+            </h2>
+            <p className="font-body-md text-body-md text-on-surface-variant">
+              Quick answers about AC repair, servicing, gas refilling, and maintenance contracts in Mumbai.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto flex flex-col gap-6">
+            <div className="glass-panel p-6 rounded-xl bg-surface border border-outline-variant/30">
+              <h3 className="font-bold text-deep-navy text-lg mb-2">
+                How quickly can an AC mechanic from Hind Cool Service reach my location in Mumbai?
+              </h3>
+              <p className="text-sm text-on-surface-variant leading-relaxed">
+                We provide priority emergency dispatch under 2 hours for breakdown and repair calls across Andheri, Bandra, Juhu, Saki Naka, and major Mumbai suburbs.
+              </p>
+            </div>
+
+            <div className="glass-panel p-6 rounded-xl bg-surface border border-outline-variant/30">
+              <h3 className="font-bold text-deep-navy text-lg mb-2">
+                What types of AC servicing and gas refilling do you offer in Mumbai?
+              </h3>
+              <p className="text-sm text-on-surface-variant leading-relaxed">
+                We offer deep jet-wash foam servicing, nitrogen leak testing, copper pipe brazing, and eco-friendly R32, R410A, and R22 refrigerant gas refilling for split, window, ductable, and VRF/VRV air conditioners.
+              </p>
+            </div>
+
+            <div className="glass-panel p-6 rounded-xl bg-surface border border-outline-variant/30">
+              <h3 className="font-bold text-deep-navy text-lg mb-2">
+                What is included in an AC Annual Maintenance Contract (AMC)?
+              </h3>
+              <p className="text-sm text-on-surface-variant leading-relaxed">
+                Our custom AC AMC plans include 3-4 routine deep jet services per year, 24/7 priority emergency breakdown support, free service visits, and zero labor charges on repair parts.
+              </p>
+            </div>
+
+            <div className="glass-panel p-6 rounded-xl bg-surface border border-outline-variant/30">
+              <h3 className="font-bold text-deep-navy text-lg mb-2">
+                Why is my AC leaking water or not cooling properly?
+              </h3>
+              <p className="text-sm text-on-surface-variant leading-relaxed">
+                AC water leakage is typically caused by clogged drain lines or coil ice buildup due to low refrigerant gas. Our certified AC mechanics perform same-day drain flushing and gas leak repairs across Mumbai.
+              </p>
             </div>
           </div>
         </div>

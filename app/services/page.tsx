@@ -39,6 +39,34 @@ export default function ServicesPage() {
       icon: 'ad_units',
       description: 'Robust, self-contained cooling powerhouses designed for demanding commercial applications like banquet halls, restaurants, and server rooms. We handle the heavy lifting, structural integration, and high-capacity electrical setups required.',
       param: 'package'
+    },
+    {
+      id: 'gas_filling',
+      title: 'AC Gas Refilling & Leak Repair',
+      icon: 'propane',
+      description: 'Eco-friendly R32, R410A, and R22 refrigerant gas top-ups, nitrogen pressure testing, copper pipe brazing, and leak detection to restore instant cooling.',
+      param: 'gas_filling'
+    },
+    {
+      id: 'installation',
+      title: 'AC Installation & Uninstallation',
+      icon: 'handyman',
+      description: 'Pristine split and window AC wall mounting, core drilling, outdoor bracket installation, and professional shifting/relocation services across Mumbai.',
+      param: 'installation'
+    },
+    {
+      id: 'jet_wash',
+      title: 'Jet Pump Wash & Chemical Servicing',
+      icon: 'water_drop',
+      description: 'High-pressure foam jet wash, evaporator coil sanitization, drain line flushing, and anti-bacterial cleaning to restore air quality and eliminate foul odors.',
+      param: 'jet_wash'
+    },
+    {
+      id: 'pcb_repair',
+      title: 'AC PCB & Compressor Troubleshooting',
+      icon: 'build',
+      description: 'Rapid diagnostic repair for inverter AC PCBs, capacitor replacements, fan motor repairs, and same-day emergency water leakage fixes by certified mechanics.',
+      param: 'pcb_repair'
     }
   ];
 
