@@ -3,7 +3,7 @@ import Image from 'next/image';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'AC Repair, Installation & VRF Services in Andheri & Saki Naka',
+  title: 'AC Repair & Service in Andheri, Saki Naka',
   description: 'Hind Cool Service offers rapid AC repair, VRF/VRV system installations, and ductable AC servicing in Andheri East, Andheri West, Saki Naka, and Lokhandwala. Call +91 74083 81814.',
   alternates: {
     canonical: '/locations/andheri',
@@ -130,7 +130,7 @@ export default function AndheriLocationPage() {
                 AS
               </div>
               <div>
-                <h4 className="font-label-md text-label-md text-deep-navy font-bold">Amit S.</h4>
+                <p className="font-label-md text-label-md text-deep-navy font-bold">Amit S.</p>
                 <p className="font-label-sm text-xs text-on-surface-variant">Restaurant Owner, MIDC Andheri</p>
               </div>
             </div>

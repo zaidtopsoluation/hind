@@ -3,7 +3,7 @@ import Image from 'next/image';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'AC Installation, Repair & Servicing in Juhu & Vile Parle',
+  title: 'AC Repair & Service in Juhu & Vile Parle',
   description: 'Hind Cool Service provides professional AC repair, rust-prevention deep cleaning, and new AC installations in Juhu, Vile Parle, and coastal Mumbai. Call +91 74083 81814.',
   alternates: {
     canonical: '/locations/juhu',
@@ -122,7 +122,7 @@ export default function JuhuLocationPage() {
                 RK
               </div>
               <div>
-                <h4 className="font-label-md text-label-md text-deep-navy font-bold">Rohan K.</h4>
+                <p className="font-label-md text-label-md text-deep-navy font-bold">Rohan K.</p>
                 <p className="font-label-sm text-xs text-on-surface-variant">Juhu Scheme Resident</p>
               </div>
             </div>

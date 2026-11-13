@@ -339,9 +339,9 @@ export default function Home() {
                 Andheri East/West, Bandra, Borivali, Goregaon, Juhu, Kandivali, Malad, Santacruz, Vile Parle, Khar, Dahisar.
               </p>
               <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-semibold">
-                <Link href="/locations/andheri" className="text-arctic-cyan hover:underline">AC Repair in Andheri</Link>
-                <Link href="/locations/bandra" className="text-arctic-cyan hover:underline">AC Repair in Bandra</Link>
-                <Link href="/locations/juhu" className="text-arctic-cyan hover:underline">AC Repair in Juhu</Link>
+                <Link href="/locations/andheri" className="text-secondary hover:underline">AC Repair in Andheri</Link>
+                <Link href="/locations/bandra" className="text-secondary hover:underline">AC Repair in Bandra</Link>
+                <Link href="/locations/juhu" className="text-secondary hover:underline">AC Repair in Juhu</Link>
               </div>
             </div>
             
@@ -401,7 +401,7 @@ export default function Home() {
                   <span className="material-symbols-outlined text-arctic-cyan">apartment</span>
                 </div>
                 <div>
-                  <h4 className="font-label-lg text-label-lg text-deep-navy">Commercial Office Client</h4>
+                  <p className="font-label-lg text-label-lg text-deep-navy">Commercial Office Client</p>
                   <p className="font-label-sm text-label-sm text-on-surface-variant">Bandra Kurla Complex (BKC)</p>
                 </div>
               </div>
@@ -423,12 +423,12 @@ export default function Home() {
               <p className="font-body-md text-body-md text-white mb-4 opacity-90 relative z-10 leading-relaxed">
                 "Fast emergency response when our AC broke down in the middle of May. The technician was knowledgeable, polite, and resolved the issue rapidly."
               </p>
-              <h4 className="font-label-sm text-label-sm text-primary-fixed-dim relative z-10">- Priya M., Residential Client (Bandra)</h4>
+              <p className="font-label-sm text-label-sm text-primary-fixed-dim relative z-10">- Priya M., Residential Client (Bandra)</p>
             </div>
 
             {/* Small Stats Box 1 */}
             <div className="md:col-span-1 md:row-span-1 bg-surface-container-high rounded-xl p-6 shadow-sm flex flex-col justify-center items-center text-center border border-surface-container-highest/50">
-              <span className="font-display-lg text-display-lg text-arctic-cyan mb-2">5k+</span>
+              <span className="font-display-lg text-display-lg text-secondary mb-2">5k+</span>
               <span className="font-label-sm text-label-sm text-deep-navy">Installations Completed</span>
             </div>
 
@@ -447,7 +447,7 @@ export default function Home() {
       <section className="bg-white py-20 border-t border-surface-container-highest">
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="text-center mb-12 max-w-2xl mx-auto flex flex-col gap-3">
-            <span className="text-xs font-bold text-arctic-cyan uppercase tracking-wider block">
+            <span className="text-xs font-bold text-secondary uppercase tracking-wider block">
               Got Questions?
             </span>
             <h2 className="font-headline-lg text-headline-lg text-deep-navy font-bold">

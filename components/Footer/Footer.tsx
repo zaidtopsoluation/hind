@@ -17,7 +17,7 @@ export default function Footer() {
 
         {/* Links Column 1 */}
         <div className="col-span-1">
-          <h4 className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Systems</h4>
+          <p className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Systems</p>
           <ul className="flex flex-col gap-3">
             <li>
               <a href="/services#vrf" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
@@ -39,7 +39,7 @@ export default function Footer() {
 
         {/* Links Column 2 */}
         <div className="col-span-1">
-          <h4 className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Company</h4>
+          <p className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Company</p>
           <ul className="flex flex-col gap-3">
             <li>
               <a href="/about" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
@@ -61,7 +61,7 @@ export default function Footer() {
 
         {/* Service Areas Column */}
         <div className="col-span-1">
-          <h4 className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Areas We Serve</h4>
+          <p className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Areas We Serve</p>
           <ul className="flex flex-col gap-3">
             <li>
               <a href="/locations/andheri" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
@@ -83,7 +83,7 @@ export default function Footer() {
 
         {/* Contact Column */}
         <div className="col-span-1">
-          <h4 className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Get in Touch</h4>
+          <p className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Get in Touch</p>
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3 text-surface-variant">
               <span className="material-symbols-outlined text-sm">call</span>

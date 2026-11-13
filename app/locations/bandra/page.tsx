@@ -3,7 +3,7 @@ import Image from 'next/image';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'AC Repair, Installation & Services in Bandra & BKC',
+  title: 'AC Repair & Service in Bandra & BKC',
   description: 'Hind Cool Service offers premium AC repair, VRF/VRV installations, and AMC servicing in Bandra West, Bandra East, and Bandra Kurla Complex (BKC). Call +91 74083 81814.',
   alternates: {
     canonical: '/locations/bandra',
@@ -126,7 +126,7 @@ export default function BandraLocationPage() {
                 PM
               </div>
               <div>
-                <h4 className="font-label-md text-label-md text-deep-navy font-bold">Priya M.</h4>
+                <p className="font-label-md text-label-md text-deep-navy font-bold">Priya M.</p>
                 <p className="font-label-sm text-xs text-on-surface-variant">Bandra West Resident</p>
               </div>
             </div>

@@ -55,8 +55,10 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <head>
         <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link 
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" 
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0..1&icon_names=ac_unit,ad_units,air,apartment,arrow_forward,build,call,check_circle,close,format_quote,handyman,hvac,language,location_on,mail,menu,propane,schedule,share,shield,speed,splitscreen,star,support_agent,verified,verified_user,warning,water_drop,workspace_premium&display=block" 
           rel="stylesheet" 
         />
       </head>
