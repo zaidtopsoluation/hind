@@ -20,7 +20,7 @@ export default function Header() {
     <header className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-white/40 shadow-[0_4px_20px_rgba(0,180,216,0.1)]">
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto w-full">
         {/* Brand */}
-        <a href="/" className="font-display-lg text-display-lg tracking-tighter text-deep-navy active:scale-95 transition-transform flex items-center gap-2 text-2xl md:text-3xl">
+        <a href="/" className="font-display-lg tracking-tighter text-deep-navy active:scale-95 transition-transform flex items-center gap-2 text-2xl md:text-3xl">
           <span className="material-symbols-outlined text-arctic-cyan" style={{ fontVariationSettings: "'FILL' 1", fontSize: '1.2em' }}>
             ac_unit
           </span>

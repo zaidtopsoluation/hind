@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { services, areas } from '@/lib/seo-content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://hindcool.com';
@@ -44,5 +45,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    ...services.map((s) => ({
+      url: `${baseUrl}/services/${s.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+    ...areas.map((a) => ({
+      url: `${baseUrl}/locations/${a.slug}`,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
   ];
 }

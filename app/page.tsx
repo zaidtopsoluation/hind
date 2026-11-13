@@ -319,7 +319,7 @@ export default function Home() {
       </section>
 
       {/* Service Coverage Matrix (Mumbai Regional SEO) */}
-      <section className="bg-white py-20 border-t border-surface-container-highest">
+      <section id="areas" className="bg-white py-20 border-t border-surface-container-highest">
         <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
           <div className="text-center mb-12 max-w-2xl mx-auto flex flex-col gap-3">
             <h2 className="font-headline-lg text-headline-lg text-deep-navy font-bold">
@@ -340,6 +340,7 @@ export default function Home() {
                 <Link href="/locations/andheri" className="text-secondary hover:underline">AC Repair in Andheri</Link>
                 <Link href="/locations/bandra" className="text-secondary hover:underline">AC Repair in Bandra</Link>
                 <Link href="/locations/juhu" className="text-secondary hover:underline">AC Repair in Juhu</Link>
+                <Link href="/locations/borivali" className="text-secondary hover:underline">AC Repair in Borivali</Link>
               </div>
             </div>
             
@@ -348,6 +349,11 @@ export default function Home() {
               <p className="text-xs text-on-surface-variant leading-relaxed">
                 Powai, Ghatkopar, Bhandup, Kurla, Mulund, Vikhroli, Chembur, Kanjurmarg.
               </p>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-semibold">
+                <Link href="/locations/powai" className="text-secondary hover:underline">AC Repair in Powai</Link>
+                <Link href="/locations/ghatkopar" className="text-secondary hover:underline">AC Repair in Ghatkopar</Link>
+                <Link href="/locations/chembur" className="text-secondary hover:underline">AC Repair in Chembur</Link>
+              </div>
             </div>
 
             <div className="glass-panel p-6 rounded-xl flex flex-col gap-3 bg-surface">
@@ -362,6 +368,10 @@ export default function Home() {
               <p className="text-xs text-on-surface-variant leading-relaxed">
                 Thane West, Vashi, Nerul, Belapur, Koparkhairane, Airoli, Ghansoli.
               </p>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-semibold">
+                <Link href="/locations/thane" className="text-secondary hover:underline">AC Repair in Thane</Link>
+                <Link href="/locations/navi-mumbai" className="text-secondary hover:underline">AC Repair in Navi Mumbai</Link>
+              </div>
             </div>
           </div>
         </div>

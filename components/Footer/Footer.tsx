@@ -1,58 +1,53 @@
+import Link from 'next/link';
+import { services, allAreaLinks } from '@/lib/seo-content';
+
 export default function Footer() {
   return (
     <footer className="bg-deep-navy w-full pt-16 pb-8 shadow-inner text-white">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
         {/* Brand Column */}
         <div className="col-span-1 flex flex-col gap-4">
-          <a href="/" className="font-headline-md text-headline-md text-on-primary flex items-center gap-2 text-2xl font-bold">
+          <a href="/" className="font-headline-md text-on-primary flex items-center gap-2 text-2xl font-bold">
             <span className="material-symbols-outlined text-arctic-cyan" style={{ fontVariationSettings: "'FILL' 1" }}>
               ac_unit
             </span>
             Hind Cool
           </a>
-          <p className="font-body-md text-body-md text-surface-variant mt-2 text-sm opacity-80 pr-4">
+          <p className="font-body-md text-surface-variant mt-2 text-sm opacity-80 pr-4">
             Elevating indoor comfort through precision engineering and dedicated professional service across Mumbai.
           </p>
         </div>
 
-        {/* Links Column 1 */}
+        {/* Services Column */}
         <div className="col-span-1">
-          <p className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Systems</p>
+          <p className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">AC Services</p>
           <ul className="flex flex-col gap-3">
-            <li>
-              <a href="/services#vrf" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
-                VRV/VRF Systems
-              </a>
-            </li>
-            <li>
-              <a href="/services#ductable" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
-                Ductable AC
-              </a>
-            </li>
-            <li>
-              <a href="/services#splits" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
-                Split AC
-              </a>
-            </li>
+            {services.map((s) => (
+              <li key={s.slug}>
+                <Link href={`/services/${s.slug}`} className="font-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                  {s.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Links Column 2 */}
+        {/* Company Column */}
         <div className="col-span-1">
           <p className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Company</p>
           <ul className="flex flex-col gap-3">
             <li>
-              <a href="/about" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+              <a href="/about" className="font-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
                 Saki Naka Office
               </a>
             </li>
             <li>
-              <a href="/contact" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+              <a href="/contact" className="font-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
                 Contact Us
               </a>
             </li>
             <li>
-              <a href="/privacy" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+              <a href="/privacy" className="font-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
                 Privacy Policy
               </a>
             </li>
@@ -63,21 +58,13 @@ export default function Footer() {
         <div className="col-span-1">
           <p className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Areas We Serve</p>
           <ul className="flex flex-col gap-3">
-            <li>
-              <a href="/locations/andheri" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
-                AC Repair in Andheri &amp; Saki Naka
-              </a>
-            </li>
-            <li>
-              <a href="/locations/bandra" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
-                AC Repair in Bandra &amp; BKC
-              </a>
-            </li>
-            <li>
-              <a href="/locations/juhu" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
-                AC Repair in Juhu &amp; Vile Parle
-              </a>
-            </li>
+            {allAreaLinks.map((a) => (
+              <li key={a.slug}>
+                <Link href={`/locations/${a.slug}`} className="font-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                  AC Repair in {a.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -87,11 +74,11 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3 text-surface-variant">
               <span className="material-symbols-outlined text-sm">call</span>
-              <a href="tel:+917408381814" className="font-body-md text-body-md text-sm hover:text-white transition-colors">+91 74083 81814</a>
+              <a href="tel:+917408381814" className="font-body-md text-sm hover:text-white transition-colors">+91 74083 81814</a>
             </div>
             <div className="flex items-start gap-3 text-surface-variant">
               <span className="material-symbols-outlined text-sm mt-0.5">location_on</span>
-              <span className="font-body-md text-body-md text-sm leading-relaxed">
+              <span className="font-body-md text-sm leading-relaxed">
                 Saki Naka, Andheri East,<br />
                 Mumbai 400072
               </span>
@@ -112,7 +99,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-8 pt-8 border-t border-white/10 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-        <p className="font-body-md text-body-md text-surface-variant text-sm opacity-60">
+        <p className="font-body-md text-surface-variant text-sm opacity-60">
           &copy; {new Date().getFullYear()} Hind Cool Service. Professional Cooling Solutions.
         </p>
         <div className="flex gap-4">

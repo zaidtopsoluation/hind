@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import SchemaMarkup from '@/components/SchemaMarkup';
+import { LinkGrid } from '@/components/seo/PageBlocks';
+import { services as serviceGuides } from '@/lib/seo-content';
 
 export const metadata: Metadata = {
   title: 'AC Repair, Service & VRF Installation in Mumbai',
@@ -165,6 +167,11 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
+
+      <LinkGrid
+        title="Choose your AC service"
+        links={serviceGuides.map((s) => ({ href: `/services/${s.slug}`, label: `${s.name} in Mumbai`, icon: s.icon }))}
+      />
 
       {/* Annual Maintenance Contract (AMC) Section */}
       <section className="bg-ice-wash py-20 relative overflow-hidden border-t border-surface-container-highest">
