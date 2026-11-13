@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
@@ -155,13 +154,12 @@ export default function Home() {
       <section className="relative min-h-[80vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-12 md:py-20 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/hvac_commercial.jpg"
-            alt="Advanced commercial HVAC assembly indicating precision engineering"
-            fill
-            preload
-            className="object-cover opacity-30"
-            sizes="100vw"
+          {/* Decorative background, desktop only: CSS backgrounds in a hidden
+              element are not downloaded, so phones skip this image entirely */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 hidden md:block bg-cover bg-center opacity-30"
+            style={{ backgroundImage: 'url(/hvac_commercial.jpg)' }}
           />
           {/* Soft gradient overlay to blend image into background color */}
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent"></div>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
@@ -8,6 +9,18 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
+});
+
+// Material Symbols subset (only the icons the site uses), self-hosted so it is
+// preloaded and not render-blocking. To add an icon, re-download the subset with
+// its name added to icon_names= (see README in app/fonts).
+const materialSymbols = localFont({
+  src: './fonts/material-symbols-subset.woff2',
+  variable: '--font-material-symbols',
+  display: 'block',
+  weight: '400',
+  style: 'normal',
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -52,15 +65,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${materialSymbols.variable} scroll-smooth`}>
       <head>
         <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0..1&icon_names=ac_unit,ad_units,air,apartment,arrow_forward,build,call,check_circle,close,format_quote,handyman,hvac,language,location_on,mail,menu,propane,schedule,share,shield,speed,splitscreen,star,support_agent,verified,verified_user,warning,water_drop,workspace_premium&display=block" 
-          rel="stylesheet" 
-        />
       </head>
       <body className="bg-surface text-on-surface antialiased flex flex-col min-h-screen">
         <Header />
