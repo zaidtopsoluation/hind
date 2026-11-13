@@ -14,7 +14,9 @@ export default function AndheriLocationPage() {
   const localSchema = {
     '@context': 'https://schema.org',
     '@type': 'HVACBusiness',
-    'name': 'Hind Cool Service - Head Office (Andheri)',
+    '@id': 'https://hindcool.com/#organization',
+    'name': 'Hind Cool Service',
+    'url': 'https://hindcool.com/locations/andheri',
     'image': 'https://hindcool.com/hvac_commercial.jpg',
     'telephone': '+917408381814',
     'priceRange': '₹₹',
@@ -43,12 +45,7 @@ export default function AndheriLocationPage() {
         '@type': 'AdministrativeArea',
         'name': 'Lokhandwala'
       }
-    ],
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.9',
-      'reviewCount': '88'
-    }
+    ]
   };
 
   return (

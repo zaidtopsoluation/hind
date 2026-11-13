@@ -14,7 +14,9 @@ export default function JuhuLocationPage() {
   const localSchema = {
     '@context': 'https://schema.org',
     '@type': 'HVACBusiness',
-    'name': 'Hind Cool Service - Juhu',
+    '@id': 'https://hindcool.com/#organization',
+    'name': 'Hind Cool Service',
+    'url': 'https://hindcool.com/locations/juhu',
     'image': 'https://hindcool.com/hvac_commercial.jpg',
     'telephone': '+917408381814',
     'priceRange': '₹₹',
@@ -35,12 +37,7 @@ export default function JuhuLocationPage() {
         '@type': 'AdministrativeArea',
         'name': 'Vile Parle'
       }
-    ],
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.9',
-      'reviewCount': '52'
-    }
+    ]
   };
 
   return (

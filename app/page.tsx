@@ -1,5 +1,13 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import SchemaMarkup from '@/components/SchemaMarkup';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   const localBusinessSchema = {
@@ -7,6 +15,7 @@ export default function Home() {
     '@type': 'HVACBusiness',
     'name': 'Hind Cool Service',
     'image': 'https://hindcool.com/hvac_commercial.jpg',
+    'logo': 'https://hindcool.com/icon.svg',
     '@id': 'https://hindcool.com/#organization',
     'url': 'https://hindcool.com',
     'telephone': '+917408381814',
@@ -53,20 +62,8 @@ export default function Home() {
         'dayOfWeek': 'Saturday',
         'opens': '10:00',
         'closes': '16:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': 'Sunday',
-        'opens': '00:00',
-        'closes': '00:00',
-        'description': 'Closed (Emergency Only)'
       }
-    ],
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.9',
-      'reviewCount': '186'
-    }
+    ]
   };
 
   const webSiteSchema = {
@@ -162,7 +159,7 @@ export default function Home() {
             src="/hvac_commercial.jpg"
             alt="Advanced commercial HVAC assembly indicating precision engineering"
             fill
-            priority
+            preload
             className="object-cover opacity-30"
             sizes="100vw"
           />
@@ -180,9 +177,9 @@ export default function Home() {
             </div>
             
             <h1 className="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-deep-navy leading-tight">
-              Reliable Thermal Comfort, <br className="hidden md:block" />
+              AC Repair &amp; Service in Mumbai, <br className="hidden md:block" />
               <span className="text-arctic-cyan relative inline-block">
-                Engineered for You.
+                Reliable Comfort, Engineered for You.
                 {/* Subtle underline accent */}
                 <span className="absolute bottom-1 left-0 w-full h-3 bg-surface-variant -z-10 rounded-full opacity-60"></span>
               </span>
@@ -341,6 +338,11 @@ export default function Home() {
               <p className="text-xs text-on-surface-variant leading-relaxed">
                 Andheri East/West, Bandra, Borivali, Goregaon, Juhu, Kandivali, Malad, Santacruz, Vile Parle, Khar, Dahisar.
               </p>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-semibold">
+                <Link href="/locations/andheri" className="text-arctic-cyan hover:underline">AC Repair in Andheri</Link>
+                <Link href="/locations/bandra" className="text-arctic-cyan hover:underline">AC Repair in Bandra</Link>
+                <Link href="/locations/juhu" className="text-arctic-cyan hover:underline">AC Repair in Juhu</Link>
+              </div>
             </div>
             
             <div className="glass-panel p-6 rounded-xl flex flex-col gap-3 bg-surface">
@@ -395,17 +397,12 @@ export default function Home() {
                 "The team from Hind Cool Service completely overhauled our office HVAC system. The precision in their installation and the immediate difference in air quality and temperature regulation was astounding. Truly professional and reliable."
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden relative bg-surface-dim">
-                  <Image
-                    src="/tech_rajesh.jpg"
-                    alt="Mohammad Shameem, Operations Director at TechNova BKC"
-                    fill
-                    className="object-cover"
-                  />
+                <div className="w-12 h-12 rounded-full bg-ice-wash flex items-center justify-center">
+                  <span className="material-symbols-outlined text-arctic-cyan">apartment</span>
                 </div>
                 <div>
-                  <h4 className="font-label-lg text-label-lg text-deep-navy">Mohammad Shameem</h4>
-                  <p className="font-label-sm text-label-sm text-on-surface-variant">Operations Director, TechNova BKC</p>
+                  <h4 className="font-label-lg text-label-lg text-deep-navy">Commercial Office Client</h4>
+                  <p className="font-label-sm text-label-sm text-on-surface-variant">Bandra Kurla Complex (BKC)</p>
                 </div>
               </div>
             </div>
@@ -418,7 +415,7 @@ export default function Home() {
               </span>
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined text-warning-amber" style={{ fontVariationSettings: "'FILL' 1', fontSize: '18px" }}>
+                  <span key={i} className="material-symbols-outlined text-warning-amber" style={{ fontVariationSettings: "'FILL' 1", fontSize: '18px' }}>
                     star
                   </span>
                 ))}

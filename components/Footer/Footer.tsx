@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="bg-deep-navy w-full pt-16 pb-8 shadow-inner text-white">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
         {/* Brand Column */}
         <div className="col-span-1 flex flex-col gap-4">
           <a href="/" className="font-headline-md text-headline-md text-on-primary flex items-center gap-2 text-2xl font-bold">
@@ -54,6 +54,28 @@ export default function Footer() {
             <li>
               <a href="/privacy" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
                 Privacy Policy
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Service Areas Column */}
+        <div className="col-span-1">
+          <h4 className="font-label-lg text-label-lg text-arctic-cyan font-bold mb-6 tracking-wider uppercase">Areas We Serve</h4>
+          <ul className="flex flex-col gap-3">
+            <li>
+              <a href="/locations/andheri" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                AC Repair in Andheri &amp; Saki Naka
+              </a>
+            </li>
+            <li>
+              <a href="/locations/bandra" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                AC Repair in Bandra &amp; BKC
+              </a>
+            </li>
+            <li>
+              <a href="/locations/juhu" className="font-body-md text-body-md text-surface-variant hover:text-white transition-colors text-sm opacity-80">
+                AC Repair in Juhu &amp; Vile Parle
               </a>
             </li>
           </ul>

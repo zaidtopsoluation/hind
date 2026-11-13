@@ -14,7 +14,9 @@ export default function BandraLocationPage() {
   const localSchema = {
     '@context': 'https://schema.org',
     '@type': 'HVACBusiness',
-    'name': 'Hind Cool Service - Bandra',
+    '@id': 'https://hindcool.com/#organization',
+    'name': 'Hind Cool Service',
+    'url': 'https://hindcool.com/locations/bandra',
     'image': 'https://hindcool.com/hvac_commercial.jpg',
     'telephone': '+917408381814',
     'priceRange': '₹₹',
@@ -39,12 +41,7 @@ export default function BandraLocationPage() {
         '@type': 'AdministrativeArea',
         'name': 'Bandra Kurla Complex (BKC)'
       }
-    ],
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': '4.9',
-      'reviewCount': '64'
-    }
+    ]
   };
 
   return (

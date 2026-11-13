@@ -3,7 +3,7 @@ import Image from 'next/image';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
-  title: 'Expert AC Services',
+  title: 'AC Repair, Service & VRF Installation in Mumbai',
   description: 'Discover Hind Cool Service’s professional HVAC systems and AC services in Mumbai. VRF/VRV installations, ductable splits, window AC, package units, and AMC plans.',
   alternates: {
     canonical: '/services',
@@ -117,7 +117,7 @@ export default function ServicesPage() {
           </div>
           
           <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-navy mb-6">
-            Engineered for Precision &amp; Comfort
+            AC Repair, Servicing &amp; Installation in Mumbai
           </h1>
           
           <p className="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl">
