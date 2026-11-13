@@ -398,13 +398,13 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-full overflow-hidden relative bg-surface-dim">
                   <Image
                     src="/tech_rajesh.jpg"
-                    alt="Rajesh Sharma, Operations Director at TechNova BKC"
+                    alt="Mohammad Shameem, Operations Director at TechNova BKC"
                     fill
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <h4 className="font-label-lg text-label-lg text-deep-navy">Rajesh Sharma</h4>
+                  <h4 className="font-label-lg text-label-lg text-deep-navy">Mohammad Shameem</h4>
                   <p className="font-label-sm text-label-sm text-on-surface-variant">Operations Director, TechNova BKC</p>
                 </div>
               </div>
