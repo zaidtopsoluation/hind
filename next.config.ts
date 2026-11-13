@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  images: {
+    // AVIF is ~30-50% smaller than WebP; browsers without AVIF still get WebP
+    formats: ['image/avif', 'image/webp'],
+  },
   async redirects() {
     return [
       {

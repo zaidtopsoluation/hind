@@ -48,12 +48,12 @@ export default function AboutPage() {
       {/* Story Section */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center" aria-label="Our Story">
         <div className="lg:col-span-7 flex flex-col gap-6">
-          <span className="text-xs font-bold text-arctic-cyan uppercase tracking-wider block">
+          <span className="text-xs font-bold text-secondary uppercase tracking-wider block">
             Our Story
           </span>
           <h1 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-deep-navy font-extrabold tracking-tight leading-tight">
             Reliable Thermal Comfort, <br />
-            <span className="text-arctic-cyan">Engineered for Mumbai.</span>
+            <span className="text-secondary">Engineered for Mumbai.</span>
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
             Starting as a small local team, Hind Cool Service has grown into Mumbai's premier cooling specialist. We believe in precision, transparency, and delivering dependable relief from the heat.
@@ -91,6 +91,8 @@ export default function AboutPage() {
             src="/about_team.jpg"
             alt="Hind Cool Service technicians team"
             fill
+            loading="eager"
+            fetchPriority="high"
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 40vw"
           />

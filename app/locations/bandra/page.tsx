@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import SchemaMarkup from '@/components/SchemaMarkup';
 
 export const metadata: Metadata = {
@@ -51,17 +50,13 @@ export default function BandraLocationPage() {
 
       {/* Local Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-12 md:py-20 overflow-hidden bg-deep-navy text-white">
-        <div className="absolute inset-0 z-0 opacity-20">
-          <Image
-            src="/hvac_commercial.jpg"
-            alt="Premium HVAC installations in Bandra BKC"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-0 opacity-20 hidden md:block bg-cover bg-center"
+          style={{ backgroundImage: 'url(/hvac_commercial.jpg)' }}
+        />
         <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col gap-6 items-center">
-          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-arctic-cyan font-label-sm text-label-sm px-4 py-2 rounded-full w-fit">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-secondary-fixed font-label-sm text-label-sm px-4 py-2 rounded-full w-fit">
             <span className="material-symbols-outlined text-arctic-cyan" style={{ fontSize: '16px' }}>
               location_on
             </span>

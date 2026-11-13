@@ -128,6 +128,7 @@ export default function ServicesPage() {
 
       {/* Services Grid Section */}
       <section className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-20">
+        <h2 className="sr-only">Our AC &amp; HVAC Services in Mumbai</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {serviceItems.map((item) => (
             <div

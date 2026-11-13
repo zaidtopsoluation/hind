@@ -129,7 +129,7 @@ export default function ContactPage() {
               </p>
               <a
                 href="tel:+917408381814"
-                className="w-full bg-warning-amber hover:bg-orange-700 text-white font-label-lg text-label-lg py-3.5 rounded-full shadow-cool text-center transition-all font-bold active:scale-95 mt-2 block"
+                className="w-full bg-orange-700 hover:bg-orange-800 text-white font-label-lg text-label-lg py-3.5 rounded-full shadow-cool text-center transition-all font-bold active:scale-95 mt-2 block"
               >
                 Call Emergency SOS
               </a>
